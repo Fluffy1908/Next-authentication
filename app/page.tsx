@@ -2,15 +2,26 @@ import { auth, signIn, signOut } from "@/auth";
 
 function SignIn() {
   return (
-    <form
-      action={async () => {
-        "use server";
-        await signIn("github");
-      }}
-    >
-      <p>You are not logged in</p>
-      <button type="submit">Sign in with GitHub</button>
-    </form>
+    <>
+      <form
+        action={async () => {
+          "use server";
+          await signIn("github");
+        }}
+      >
+        <p>You are not logged in</p>
+        <button type="submit">Sign in with GitHub</button>
+      </form>
+
+      <form
+        action={async () => {
+          "use server";
+          await signIn("google");
+        }}
+      >
+        <button type="submit">Sign in with Google</button>
+      </form>
+    </>
   );
 }
 
